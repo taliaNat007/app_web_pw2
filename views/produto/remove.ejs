@@ -1,0 +1,64 @@
+
+<% produto = locals.produto || {} %>
+<% produto = locals.produto || {} %>
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4>
+                <%= locals.titulo %>
+            </h4>
+            <p class="mb-0">&raquo; <%= locals.titulo %></p>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Inicial</a></li>
+            <li class="breadcrumb-item"><a href="/produtos">Consulta de Produtos</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Novo Produto</a></li>
+        </ol>
+    </div>
+</div>
+<!-- row -->
+<div class="row">
+    <div class="col-lg-8 offset-lf-3">
+        <div class="card border-danger">
+            <div class="card-header bg-danger">
+                <h4 class="card-title text-white mb-0">Exclusão de Produto</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <b>Esta ação excluirá o registro de forma permanente.</b>
+                </div>
+
+                <p class="mb-4">
+                    Tem certeza que deseja excluir o produto abaixo?
+                </p>
+
+                <div class="table-responsive mb-4">
+                    <table class="table tablr-bordered mb-0">
+                        <tbody>
+                            <tr>
+                                <th>Nome</th>
+                                <td><%= produto.nome %></td>
+                            </tr>
+                            <tr>
+                                <th>Descrição</th>
+                                <td><%= produto.descricao %></td>
+                            </tr>
+                            <tr>
+                                <th>Preço</th>
+                                <td><%= produto.preco %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <form action="/produtos/<%= produto.id %>/remove" method="POST">
+                    <button type="submit" class="btn btn-danger mr-2">Confirmar exclusão</button>
+                    <a href="/produtos" class="btn btn-secondary">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
