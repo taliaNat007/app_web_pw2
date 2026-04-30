@@ -1,2 +1,1 @@
-# app_web_pw2
-Código da aula atualizado
+# pw2-app-web
